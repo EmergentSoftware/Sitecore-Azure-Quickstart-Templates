@@ -214,7 +214,7 @@
     "xcServerConfigurationEnvironment": {
       "type": "string",
       "defaultValue": "Production",
-      "allowedValues": [ "Development", "Production" ]
+      "allowedValues": ["Development", "Production"]
     },
 
     "environmentType": {
@@ -222,17 +222,17 @@
       "defaultValue": "Non-Production"
     },
 
-    "azureServiceBusNamespaceName" : {
+    "azureServiceBusNamespaceName": {
       "type": "string",
       "minLength": 1
     },
-    "azureServiceBusAccessKeyName" : {
+    "azureServiceBusAccessKeyName": {
       "type": "string",
       "minLength": 1
     },
     "xpPerformanceCountersType": {
       "type": "string",
-      "allowedValues": [ "Disable", "ApplicationInsights" ],
+      "allowedValues": ["Disable", "ApplicationInsights"],
       "defaultValue": "Disable"
     },
     "minTlsVersion": {
@@ -248,11 +248,11 @@
       "apiVersion": "[variables('webApiVersion')]",
       "properties": {
         "addOnPackages": [
-          {          
+          {
             "packageUri": "[parameters('xcRefDataMsDeployPackageUrl')]",
             "setParameters": {
               // "IIS Web Application Name": "[variables('xcRefDataWebAppNameTidy')]",
-              "Database Server Name": "[variables('sqlServerFqdnTidy')]",
+              // "Database Server Name": "[variables('sqlServerFqdnTidy')]",
               "Reference Data Database Name": "[variables('refDataSqlDatabaseNameTidy')]",
               "Reference Data Database Application User Name": "[parameters('xcRefDataSqlDatabaseUserName')]",
               "Reference Data Database Application User Password": "[parameters('xcRefDataSqlDatabasePassword')]",
@@ -277,7 +277,7 @@
       "apiVersion": "[variables('webApiVersion')]",
       "properties": {
         "addOnPackages": [
-          {          
+          {
             "packageUri": "[parameters('xcCollectMsDeployPackageUrl')]",
             "dbType": "SQL",
             "connectionString": "[concat('Data Source=tcp:', variables('sqlServerFqdnTidy'), ',1433;Initial Catalog=master;User Id=', parameters('sqlServerLogin'), ';Password=', parameters('sqlServerPassword'), ';')]",
@@ -417,7 +417,7 @@
           },
 
           "azureServiceBusNamespaceName": {
-            "value" : "[parameters('azureServiceBusNamespaceName')]"
+            "value": "[parameters('azureServiceBusNamespaceName')]"
           },
           "azureServiceBusAccessKeyName": {
             "value": "[parameters('azureServiceBusAccessKeyName')]"
