@@ -83,7 +83,7 @@
       "minLength": 1,
       "defaultValue": "[concat(parameters('deploymentId'), '-ma-db')]"
     },
-  "refDataSqlDatabaseName": {
+    "refDataSqlDatabaseName": {
       "type": "string",
       "minLength": 1,
       "defaultValue": "[concat(parameters('deploymentId'), '-refdata-db')]"
@@ -180,7 +180,7 @@
     "xcServerConfigurationEnvironment": {
       "type": "string",
       "defaultValue": "Production",
-      "allowedValues": [ "Development", "Production" ]
+      "allowedValues": ["Development", "Production"]
     },
 
     "environmentType": {
@@ -188,17 +188,17 @@
       "defaultValue": "Non-Production"
     },
 
-    "azureServiceBusNamespaceName" : {
+    "azureServiceBusNamespaceName": {
       "type": "string",
       "minLength": 1
     },
-    "azureServiceBusAccessKeyName" : {
+    "azureServiceBusAccessKeyName": {
       "type": "string",
       "minLength": 1
     },
     "xpPerformanceCountersType": {
       "type": "string",
-      "allowedValues": [ "Disable", "ApplicationInsights" ],
+      "allowedValues": ["Disable", "ApplicationInsights"],
       "defaultValue": "Disable"
     },
     "minTlsVersion": {
@@ -214,7 +214,7 @@
       "apiVersion": "[variables('webApiVersion')]",
       "properties": {
         "addOnPackages": [
-          {          
+          {
             "packageUri": "[parameters('xcSearchMsDeployPackageUrl')]",
             "dbType": "SQL",
             "connectionString": "[concat('Data Source=tcp:', variables('sqlServerFqdnTidy'), ',1433;Initial Catalog=master;User Id=', parameters('sqlServerLogin'), ';Password=', parameters('sqlServerPassword'), ';')]",
@@ -258,6 +258,8 @@
       "properties": {
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       }
     }
