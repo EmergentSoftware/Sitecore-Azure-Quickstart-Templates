@@ -351,10 +351,7 @@
     },
     "xpPerformanceCountersType": {
       "type": "string",
-      "allowedValues": [
-        "Disable",
-        "ApplicationInsights"
-      ],
+      "allowedValues": ["Disable", "ApplicationInsights"],
       "defaultValue": "[if(parameters('storeSitecoreCountersInApplicationInsights'), 'ApplicationInsights', 'Disable')]"
     },
     "applicationInsightsPricePlan": {
@@ -547,10 +544,7 @@
     "xcServerConfigurationEnvironment": {
       "type": "string",
       "defaultValue": "Production",
-      "allowedValues": [
-        "Development",
-        "Production"
-      ]
+      "allowedValues": ["Development", "Production"]
     },
     "authCertificateName": {
       "type": "string",
@@ -570,10 +564,7 @@
     "exmEdsProvider": {
       "type": "string",
       "minLength": 1,
-      "allowedValues": [
-        "CustomSMTP",
-        "EmailCloud"
-      ],
+      "allowedValues": ["CustomSMTP", "EmailCloud"],
       "defaultValue": "CustomSMTP"
     },
     "deployPlatform": {
@@ -784,9 +775,7 @@
           }
         }
       },
-      "dependsOn": [
-        "[concat(parameters('deploymentId'), '-prerequisites')]"
-      ]
+      "dependsOn": ["[concat(parameters('deploymentId'), '-prerequisites')]"]
     },
     {
       "apiVersion": "[variables('resourcesApiVersion')]",
@@ -1194,6 +1183,9 @@
           },
           "cortexReportingWebAppName": {
             "value": "[parameters('cortexReportingWebAppName')]"
+          },
+          "cortexProcessingWebAppName": {
+            "value": "[parameters('cortexProcessingWebAppName')]"
           },
           "siMsDeployPackageUrl": {
             "value": "[parameters('siMsDeployPackageUrl')]"
