@@ -393,7 +393,7 @@
 
     "exmEdsProvider": {
       "type": "string",
-      "allowedValues": [ "CustomSMTP", "EmailCloud" ],
+      "allowedValues": ["CustomSMTP", "EmailCloud"],
       "defaultValue": "CustomSMTP"
     },
 
@@ -481,6 +481,8 @@
       "properties": {
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       }
@@ -659,6 +661,8 @@
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "WEBSITE_NODE_DEFAULT_VERSION": "[parameters('cdNodeJsVersion')]",
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       },
@@ -674,6 +678,8 @@
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "WEBSITE_NODE_DEFAULT_VERSION": "[parameters('cmNodeJsVersion')]",
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       },
@@ -689,6 +695,8 @@
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       },
       "dependsOn": [

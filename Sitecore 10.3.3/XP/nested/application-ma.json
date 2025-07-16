@@ -185,7 +185,7 @@
     "xcServerConfigurationEnvironment": {
       "type": "string",
       "defaultValue": "Production",
-      "allowedValues": [ "Development", "Production" ]
+      "allowedValues": ["Development", "Production"]
     },
 
     "environmentType": {
@@ -203,7 +203,7 @@
     },
     "xpPerformanceCountersType": {
       "type": "string",
-      "allowedValues": [ "Disable", "ApplicationInsights" ],
+      "allowedValues": ["Disable", "ApplicationInsights"],
       "defaultValue": "Disable"
     },
     "minTlsVersion": {
@@ -301,6 +301,8 @@
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       },
       "dependsOn": [
@@ -315,6 +317,8 @@
         "minTlsVersion": "[parameters('minTlsVersion')]",
         "WEBSITE_LOAD_CERTIFICATES": "[parameters('authCertificateThumbprint')]",
         "WEBSITE_DYNAMIC_CACHE": 0,
+        "WEBSITE_ADD_SITENAME_BINDINGS_IN_APPHOST_CONFIG": 1,
+        "MSDEPLOY_RENAME_LOCKED_FILES": 1,
         "SITECORE_ENVIRONMENT_TYPE": "[parameters('environmentType')]"
       },
       "dependsOn": [
